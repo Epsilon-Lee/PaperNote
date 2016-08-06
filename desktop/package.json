@@ -1,26 +1,26 @@
 {
-  "name": "PaperNote",
-  "version": "1.0.0",
-  "description": "A cross-platform application for reading and noting papers.",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zjhzxhz/PaperNote.git"
-  },
-  "keywords": [
-    "PaperNote",
-    "Electron"
-  ],
-  "author": "zjhzxhz",
-  "license": "GPL-2.0",
-  "bugs": {
-    "url": "https://github.com/zjhzxhz/PaperNote/issues"
-  },
-  "homepage": "https://papernote.org",
-  "devDependencies": {
-    "electron-prebuilt": "^1.3.2"
-  }
+    "name": "PaperNote",
+    "version": "1.0.0",
+    "description": "A cross-platform application for reading and noting papers.",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zjhzxhz/PaperNote.git"
+    },
+    "keywords": [
+        "PaperNote",
+        "Electron"
+    ],
+    "author": "zjhzxhz",
+    "license": "GPL-2.0",
+    "bugs": {
+        "url": "https://github.com/zjhzxhz/PaperNote/issues"
+    },
+    "homepage": "https://papernote.org",
+    "dependencies": {
+        "electron-prebuilt": "^1.3.2"
+    }
 }
