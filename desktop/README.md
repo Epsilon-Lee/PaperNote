@@ -29,9 +29,12 @@ to install "typings" as a global NPM module:
 `npm install -g typings`
 
 The type definitions are committed to source control, as the `typings.json` file and the `typings` subdirectory.
-To get the latest type definitions, delete that file and subdirectory and replace them by running these two
+To get the latest type definitions, delete that file and subdirectory and replace them by running these 
 commands:
 
-`typings install dt~electron/github-electron --save --global`
-
-`typings install dt~node --save --global`
+```
+typings install dt~core-js --save --global
+typings install dt~electron/github-electron --save --global
+typings install dt~jasmine --save --global
+typings install dt~node --save --global
+```

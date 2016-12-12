@@ -1,38 +1,33 @@
 /// <reference path="typings/index.d.ts" />
 import electron = require("electron");
 let app = electron.app;
-let dialog = electron.dialog;
 let BrowserWindow = electron.BrowserWindow;
-let Menu = electron.Menu;
 
 // Global reference to the main window, so the garbage collector doesn't close it.
 let mainWindow : Electron.BrowserWindow;
 
 // Opens the main window, with a native menu bar.
 function createWindow() {
-    mainWindow = new BrowserWindow({width: 800, height: 600});
+    // Create the browser window.
+    mainWindow = new BrowserWindow({
+        minWidth: 800,
+        minHeight: 600,
+        width: 1024,
+        height: 768,
+        frame: false
+    });
 
-    let menuTemplate = [{
-        label: "File",
-        submenu: [{
-            label: "Open",
-            click: () => {
-                // Do something
-            }
-        }, {
-            label: "Exit",
-            click: () => {
-                app.quit();
-            }
-        }]
-    }];
-    let menu : Electron.Menu = Menu.buildFromTemplate(menuTemplate);
-    Menu.setApplicationMenu(menu);
+    // and load the index.html of the app.
+    mainWindow.loadURL(`file://${__dirname}/index.html`);
 
-    mainWindow.loadURL(`file://${__dirname}/app/index.html`);
+    // Open the DevTools.
     // mainWindow.webContents.openDevTools();
 
+    // Emitted when the window is closed.
     mainWindow.on("closed", () => {
+        // Dereference the window object, usually you would store windows
+        // in an array if your app supports multi windows, this is the time
+        // when you should delete the corresponding element.
         mainWindow = null;
     });
 }
@@ -40,11 +35,6 @@ function createWindow() {
 // Call 'createWindow()' on startup.
 app.on("ready", () => {
     createWindow();
-    if (process.argv[1] != "main.js") {
-        mainWindow.webContents.on("did-finish-load", () => {
-            mainWindow.webContents.send("load-file", process.argv[1]);
-        });
-    }
 });
 
 // On OS X it is common for applications and their menu bar to stay active until the user quits explicitly
