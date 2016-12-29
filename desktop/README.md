@@ -34,7 +34,7 @@ commands:
 
 ```
 typings install dt~core-js --save --global
-typings install dt~electron/github-electron --save --global
+typings install dt~electron --save --global
 typings install dt~jasmine --save --global
 typings install dt~node --save --global
 ```
